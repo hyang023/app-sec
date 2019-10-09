@@ -18,14 +18,14 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
     //Set int bucket to the output of hash_function(word).
     int hash_val = hash_function(lower_word);
     //Set hashmap_t cursor equal to hashmap[bucket].
-    hashmap_t cursor = hashmap[hash_val];
+    hashmap_t cursor = hashtable[hash_val];
     //While cursor is not NULL:
     while (cursor != NULL){
         //If word equals cursor->word:
-        if (word == cursor.word)
-            return TRUE;
+        if (word == cursor->word)
+            return 1;
         //Set curosr to cursor->next.
-        cursor = cursor.next;
+        cursor = cursor->next;
     }
     return 0;
 }
