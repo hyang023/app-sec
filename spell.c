@@ -35,7 +35,9 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
 //function load_dictionary(string dictionary, hashmap hashtable[])
 bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[]) {
     //Initialize all values in hash table to NULL.
-    hashtable = {0};
+    for (int i=0; i<HASH_SIZE; i++){
+        hashtable[i] = NULL;
+    }
     /*
     Open dict_file from path stored in dictionary.
     If dict_file is NULL:
