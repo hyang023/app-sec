@@ -70,11 +70,11 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[]) {
         //Set hashmap_t new_node to a new node.
         hashmap_t new_node;
         //Set new_node->next to NULL.
-        new_node.next = {0};
+        new_node->next = NULL;
         //Set new_node->word equal to word.
-        new_node.word = line;
+        new_node->word = line;
         //Set int bucket to hash_function(word).
-        int bucket = hash_function(word);
+        int bucket = hash_function(line);
         //if hashtable[bucket] is NULL:
         if (hashtable[bucket] == NULL){
            //Set hashtable[bucket] to new_node.
@@ -83,7 +83,7 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[]) {
         //else:
         else{
             //Set new_node->next to hashtable[bucket].
-            new_node.next = hashtable[bucket];
+            new_node->next = hashtable[bucket];
             //Set hashtable[bucket] to new_node.
             hashtable[bucket] = new_node;
         }
