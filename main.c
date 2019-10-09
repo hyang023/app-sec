@@ -20,6 +20,6 @@ int main(int argc, char *argv[]){
 	free(line);
     	fclose(fp);
 	int num_misspelled = check_words(fp, hashtable, misspelled);
-	printf("%d",num_misspelled);
+	printf("num misspelled is %d",num_misspelled);
 	return 0;
 }
