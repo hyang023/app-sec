@@ -72,7 +72,7 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[]) {
         //Set new_node->next to NULL.
         new_node->next = NULL;
         //Set new_node->word equal to word.
-        new_node->word = &line;
+        strcpy(new_node->word,line);
         //Set int bucket to hash_function(word).
         int bucket = hash_function(line);
         //if hashtable[bucket] is NULL:
