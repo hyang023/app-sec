@@ -10,7 +10,15 @@ int main(int argc, char *argv[]){
 	load_dictionary(argv[2], hashtable);
 	char *misspelled[MAX_MISSPELLED];
 	FILE *fp = fopen(argv[1], "r");
+	char *line = NULL;
+	size_t len = 0;
+    	ssize_t read;
+	while ((read = getline(&line, &len, fp)) != -1) {
+        	printf("Retrieved line of length %u :\n", read);
+		printf("%s", line);
+	}
+	free(line);
+    	fclose(fp);
 	int num_misspelled = check_words(fp, hashtable, misspelled);
-	
 	return 0;
 }
