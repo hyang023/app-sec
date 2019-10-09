@@ -6,6 +6,11 @@
 #include "dictionary.h"
 
 int main(int argc, char *argv[]){
-
+	hashmap_t hashtable[HASH_SIZE];
+	load_dictionary(argv[2], hashtable);
+	char *misspelled[MAX_MISSPELLED];
+	FILE *fp = fopen(argv[1], "r");
+	int num_misspelled = check_words(fp, hashtable, misspelled);
+	
 	return 0;
 }
