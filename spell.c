@@ -123,7 +123,7 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[]) {
             //printf("%s\n", token);
             //remove punctuation from beginning and end of word
             //if not check_word(word):
-            if (!(check_word(token))) {
+            if (!(check_word(token,hashtable))) {
                 //append word to misspelled
                 //NEED TO MALLOC
                 //For a variable-length string, do:
@@ -147,6 +147,7 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[]) {
     */
     //Return num_misspelled.
     return num_misspelled;
+    }
 }
 
 //citation: https://stackoverflow.com/questions/2661766/how-do-i-lowercase-a-string-in-c
