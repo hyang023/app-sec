@@ -29,7 +29,7 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
         cursor = cursor.next;
     }
     */
-    return FALSE;
+    return 0;
 }
 
 //function load_dictionary(string dictionary, hashmap hashtable[])
@@ -90,7 +90,7 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[]) {
     free(line);
     fclose(stream);
     */
-    return TRUE;
+    return 1;
 }
 
 //function check_words(file fp, hashmap hashtable[], string misspelled[])
