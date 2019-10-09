@@ -14,7 +14,7 @@ int main(int argc, char *argv[]){
 	size_t len = 0;
     	ssize_t read;
 	while ((read = getline(&line, &len, fp)) != -1) {
-        	printf("Retrieved line of length %u :\n", read);
+        	printf("Retrieved line of length %lu :\n", read);
 		printf("%s", line);
 	}
 	free(line);
