@@ -61,7 +61,7 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[]) {
  
     stream = fopen(dictionary_file, "r");
     if (stream == NULL)
-        return FALSE;
+        return 0;
  
     while ((read = getline(&line, &len, stream)) != -1) {
         //NEED TO MALLOC
