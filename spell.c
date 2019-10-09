@@ -53,7 +53,7 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[]) {
             Set new_node->next to hashtable[bucket].
             Set hashtable[bucket] to new_node.
     Close dict_file.
-    //CLOSE BLOCK COMMENT HERE
+    */
     FILE *stream;
     char *line = NULL;
     size_t len = 0;
@@ -91,7 +91,6 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[]) {
  
     free(line);
     fclose(stream);
-    */
     return 1;
 }
 
