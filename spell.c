@@ -35,7 +35,7 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
 //function load_dictionary(string dictionary, hashmap hashtable[])
 bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[]) {
     //Initialize all values in hash table to NULL.
-    hashtable = {0};
+    // --> UNCOMMENT LATER hashtable = {0};
     /*
     Open dict_file from path stored in dictionary.
     If dict_file is NULL:
@@ -146,7 +146,8 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[]) {
                 Increment num_misspelled.
     */
     //Return num_misspelled.
-    return num_misspelled;
+    // --> UNCOMMENT LATERreturn num_misspelled;
+    return 0;
 }
 
 //citation: https://stackoverflow.com/questions/2661766/how-do-i-lowercase-a-string-in-c
