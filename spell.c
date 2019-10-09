@@ -132,6 +132,7 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[]) {
                 //increment num_misspelled 
                 num_misspelled++;
             }
+        }
     }
  
     free(line);
@@ -145,9 +146,9 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[]) {
                 Append word to misspelled.
                 Increment num_misspelled.
     */
+        
     //Return num_misspelled.
     return num_misspelled;
-    }
 }
 
 //citation: https://stackoverflow.com/questions/2661766/how-do-i-lowercase-a-string-in-c
