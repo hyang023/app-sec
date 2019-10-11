@@ -24,9 +24,10 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
     //While cursor is not NULL:
     while (cursor != NULL){
         //If word equals cursor->word:
-        if (lower_word == cursor->word)
+        if (lower_word == cursor->word){
             printf("returning 1\n");
             return 1;
+        }
         //Set curosr to cursor->next.
         cursor = cursor->next;
     }
