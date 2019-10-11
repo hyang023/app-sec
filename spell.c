@@ -134,7 +134,7 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[]) {
     }
  
     free(line);
-    //fclose(fp);
+    fclose(fp);
     /*While line in fp is not EOF (end of file):
         Read the line.
         Split the line on spaces.
