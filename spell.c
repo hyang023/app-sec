@@ -144,6 +144,8 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[]) {
     }
  
     free(line);
+    free(rest);
+    free(token);
     //fclose(fp);
     /*While line in fp is not EOF (end of file):
         Read the line.
