@@ -14,7 +14,7 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
     for (int i=0; i<strlen(lower_word); i++){
       lower_word[i]=tolower(lower_word[i]);
     }
-    printf("check_word word is: %s\n",lower_word);
+    printf("check_word word is: \"%s\"\n",lower_word);
     //int hash_val = hash_function(lower_word) otherwise as:
     //Set int bucket to the output of hash_function(word).
     int hash_val = hash_function(lower_word);
@@ -28,7 +28,7 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
         //Set curosr to cursor->next.
         cursor = cursor->next;
     }
-    printf("returning 0");
+    printf("returning 0\n");
     return 0;
 }
 
@@ -119,7 +119,7 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[]) {
         //char *rest;
         //strtok(rest, " ");
         while ((token = strtok_r(rest, " !,.?;-:\"\'\n", &rest))){
-            printf("token is: %s\n", token);
+            printf("token is: \"%s\";", token);
             //remove punctuation from beginning and end of word
             //if not check_word(word):
             if (!(check_word(token,hashtable))) {
