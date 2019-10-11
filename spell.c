@@ -111,7 +111,7 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[]) {
     while ((read = getline(&line, &len, fp)) != -1) {
         //printf("Retrieved line of length %lu :\n", read);
         //for(token = strtok_r(read, " ", &savePtr); token != NULL; strtok_r(NULL, " ", &savePtr))
-        printf("check words line is: %s", line);
+        //printf("check words line is: %s", line);
         //char* token; 
         char* rest = strdup(line); 
         //char *rest;
