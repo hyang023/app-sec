@@ -94,6 +94,7 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[]) {
 
 //function check_words(file fp, hashmap hashtable[], string misspelled[])
 int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[]) {
+    printf("entering check_words function");
     //Set int num_misspelled to 0.
     int num_misspelled = 0;
 
@@ -112,7 +113,7 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[]) {
 
         //printf("Retrieved line of length %u :\n", read);
         //for(token = strtok_r(read, " ", &savePtr); token != NULL; strtok_r(NULL, " ", &savePtr))
-        printf("%s", line);
+        printf("check words line is: %s", line);
         //char* token; 
         char* rest = strdup(line); 
         //char *rest;
