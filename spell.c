@@ -64,7 +64,7 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[]) {
     while ((read = getline(&line, &len, stream)) != -1) {
         //NEED TO MALLOC
         //printf("Retrieved line of length %u :\n", read);
-        printf("%s", line);
+        //printf("%s", line);
         //Set hashmap_t new_node to a new node.
         hashmap_t new_node = (struct node*) malloc(sizeof(struct node));;
         //Set new_node->next to NULL.
