@@ -141,7 +141,6 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[]) {
                 num_misspelled++;
             }
         }
-        free(rest);
     }
  
     free(line);
