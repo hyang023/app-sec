@@ -29,12 +29,14 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
         //If word equals cursor->word:
         if (strcmp(lower_word, cursor->word) == 0){
             //printf("returning 1\n");
+            free(lower_word);
             return 1;
         }
         //Set curosr to cursor->next.
         cursor = cursor->next;
     }
     //printf("returning 0\n");
+    free(lower_word);
     return 0;
 }
 
