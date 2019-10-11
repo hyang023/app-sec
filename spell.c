@@ -25,9 +25,9 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
     //char lower_word2[strlen(lower_word)];
     //strcpy(lower_word2, lower_word);
     while (cursor != NULL){
-        printf("cursor word is \"%s\" and lower_word2 is \"%s\"\n",cursor->word,lower_word2);
+        printf("cursor word is \"%s\" and lower_word2 is \"%s\"\n",cursor->word,lower_word);
         //If word equals cursor->word:
-        if (strcmp(lower_word2, cursor->word) == 0){
+        if (strcmp(lower_word, cursor->word) == 0){
             printf("returning 1\n");
             return 1;
         }
