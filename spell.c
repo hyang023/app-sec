@@ -23,7 +23,7 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
     hashmap_t cursor = hashtable[hash_val];
     //While cursor is not NULL:
     while (cursor != NULL){
-        printf("cursor word is %s\n",cursor->word);
+        printf("cursor word is \"%s\"\n",cursor->word);
         //If word equals cursor->word:
         if (lower_word == cursor->word){
             printf("returning 1\n");
