@@ -112,12 +112,12 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[]) {
 
         //printf("Retrieved line of length %u :\n", read);
         //for(token = strtok_r(read, " ", &savePtr); token != NULL; strtok_r(NULL, " ", &savePtr))
-        //printf("%s", line);
+        printf("%s", line);
         //char* token; 
         char* rest = strdup(line); 
         //char *rest;
         //strtok(rest, " ");
-        while ((token = strtok_r(rest, " !,.?;-:\"\'", &rest))){
+        while ((token = strtok_r(rest, " !,.?;-:\"\'", &rest)) != NULL){
             printf("token is: %s\n", token);
             //remove punctuation from beginning and end of word
             //if not check_word(word):
