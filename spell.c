@@ -18,6 +18,7 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
     //int hash_val = hash_function(lower_word) otherwise as:
     //Set int bucket to the output of hash_function(word).
     int hash_val = hash_function(lower_word);
+    printf("hash_val is %d;",hash_val);
     //Set hashmap_t cursor equal to hashmap[bucket].
     hashmap_t cursor = hashtable[hash_val];
     //While cursor is not NULL:
