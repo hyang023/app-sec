@@ -14,7 +14,7 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
     for (int i=0; i<strlen(lower_word); i++){
       lower_word[i]=tolower(lower_word[i]);
     }
-    printf("check_word word is: \"%s\"\n",lower_word);
+    printf("check_word word is: \"%s\";",lower_word);
     //int hash_val = hash_function(lower_word) otherwise as:
     //Set int bucket to the output of hash_function(word).
     int hash_val = hash_function(lower_word);
