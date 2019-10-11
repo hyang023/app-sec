@@ -19,7 +19,8 @@ int main(int argc, char *argv[]){
 	}
 	free(line);
     	fclose(fp);
-	int num_misspelled = check_words(fp, hashtable, misspelled);
+	FILE *fp2 = fopen(argv[2], "r");
+	int num_misspelled = check_words(fp2, hashtable, misspelled);
 	printf("num misspelled is %d\n",num_misspelled);
 	return 0;
 }
