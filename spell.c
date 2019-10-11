@@ -22,8 +22,8 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
     //Set hashmap_t cursor equal to hashmap[bucket].
     hashmap_t cursor = hashtable[hash_val];
     //While cursor is not NULL:
-    char lower_word2[strlen(lower_word)];
-    strcpy(lower_word2, lower_word);
+    //char lower_word2[strlen(lower_word)];
+    //strcpy(lower_word2, lower_word);
     while (cursor != NULL){
         printf("cursor word is \"%s\" and lower_word2 is \"%s\"\n",cursor->word,lower_word2);
         //If word equals cursor->word:
