@@ -68,8 +68,7 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[]) {
         return 0;
  
     while ((read = getline(&line, &len, stream)) != -1) {
-        char* rest = strdup(line);
-        while ((line = strtok_r(rest, " !,.?;-:\"\'\n", &rest))){};
+        line[strlen(line)-1] = '\0';
         //NEED TO MALLOC
         //printf("Retrieved line of length %u :\n", read);
         printf("\"%s\"", line);
