@@ -28,6 +28,7 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
         //Set curosr to cursor->next.
         cursor = cursor->next;
     }
+    printf("returning 0");
     return 0;
 }
 
