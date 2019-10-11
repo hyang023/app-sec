@@ -6,7 +6,8 @@
 #include "dictionary.h"
 
 //function check_word(string word, hashmap hashtable[])
-bool check_word(const char* word, hashmap_t hashtable[]) {  
+bool check_word(const char* word, hashmap_t hashtable[]) {
+    printf("check_word word is: %s\n",word);
     //string lower_word = to_lower(word)
     int a = strlen(word);
     char* lower_word = malloc(a);
