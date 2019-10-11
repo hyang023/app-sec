@@ -1,0 +1,87 @@
+
+no@no:~/app-sec$ valgrind --leak-check=yes ./spell_check test1.txt wordlist.txt
+==24497== Memcheck, a memory error detector
+==24497== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==24497== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==24497== Command: ./spell_check test1.txt wordlist.txt
+==24497== 
+==24497== Invalid write of size 1
+==24497==    at 0x4C32E0D: strcpy (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24497==    by 0x108AD4: check_word (in /home/no/app-sec/spell_check)
+==24497==    by 0x108DB2: check_words (in /home/no/app-sec/spell_check)
+==24497==    by 0x108ED0: main (in /home/no/app-sec/spell_check)
+==24497==  Address 0x5a2cfc4 is 0 bytes after a block of size 4 alloc'd
+==24497==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24497==    by 0x108ABD: check_word (in /home/no/app-sec/spell_check)
+==24497==    by 0x108DB2: check_words (in /home/no/app-sec/spell_check)
+==24497==    by 0x108ED0: main (in /home/no/app-sec/spell_check)
+==24497== 
+==24497== Invalid read of size 1
+==24497==    at 0x4C32D44: __strlen_sse2 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24497==    by 0x108B20: check_word (in /home/no/app-sec/spell_check)
+==24497==    by 0x108DB2: check_words (in /home/no/app-sec/spell_check)
+==24497==    by 0x108ED0: main (in /home/no/app-sec/spell_check)
+==24497==  Address 0x5a2cfc4 is 0 bytes after a block of size 4 alloc'd
+==24497==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24497==    by 0x108ABD: check_word (in /home/no/app-sec/spell_check)
+==24497==    by 0x108DB2: check_words (in /home/no/app-sec/spell_check)
+==24497==    by 0x108ED0: main (in /home/no/app-sec/spell_check)
+==24497== 
+==24497== Invalid read of size 1
+==24497==    at 0x4C32D44: __strlen_sse2 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24497==    by 0x108A38: hash_function (in /home/no/app-sec/spell_check)
+==24497==    by 0x108B31: check_word (in /home/no/app-sec/spell_check)
+==24497==    by 0x108DB2: check_words (in /home/no/app-sec/spell_check)
+==24497==    by 0x108ED0: main (in /home/no/app-sec/spell_check)
+==24497==  Address 0x5a2cfc4 is 0 bytes after a block of size 4 alloc'd
+==24497==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24497==    by 0x108ABD: check_word (in /home/no/app-sec/spell_check)
+==24497==    by 0x108DB2: check_words (in /home/no/app-sec/spell_check)
+==24497==    by 0x108ED0: main (in /home/no/app-sec/spell_check)
+==24497== 
+==24497== Invalid read of size 1
+==24497==    at 0x4C33DC4: strcmp (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24497==    by 0x108B64: check_word (in /home/no/app-sec/spell_check)
+==24497==    by 0x108DB2: check_words (in /home/no/app-sec/spell_check)
+==24497==    by 0x108ED0: main (in /home/no/app-sec/spell_check)
+==24497==  Address 0x5a2cfc4 is 0 bytes after a block of size 4 alloc'd
+==24497==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24497==    by 0x108ABD: check_word (in /home/no/app-sec/spell_check)
+==24497==    by 0x108DB2: check_words (in /home/no/app-sec/spell_check)
+==24497==    by 0x108ED0: main (in /home/no/app-sec/spell_check)
+==24497== 
+num misspelled is 3
+==24497== 
+==24497== HEAP SUMMARY:
+==24497==     in use at exit: 6,896,076 bytes in 123,155 blocks
+==24497==   total heap usage: 123,161 allocs, 6 frees, 6,906,084 bytes allocated
+==24497== 
+==24497== 81 bytes in 22 blocks are definitely lost in loss record 1 of 5
+==24497==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24497==    by 0x108ABD: check_word (in /home/no/app-sec/spell_check)
+==24497==    by 0x108DB2: check_words (in /home/no/app-sec/spell_check)
+==24497==    by 0x108ED0: main (in /home/no/app-sec/spell_check)
+==24497== 
+==24497== 107 bytes in 1 blocks are definitely lost in loss record 2 of 5
+==24497==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24497==    by 0x4ED99B9: strdup (strdup.c:42)
+==24497==    by 0x108D99: check_words (in /home/no/app-sec/spell_check)
+==24497==    by 0x108ED0: main (in /home/no/app-sec/spell_check)
+==24497== 
+==24497== 6,895,336 (105,560 direct, 6,789,776 indirect) bytes in 1,885 blocks are definitely lost in loss record 5 of 5
+==24497==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==24497==    by 0x108C3F: load_dictionary (in /home/no/app-sec/spell_check)
+==24497==    by 0x108E8C: main (in /home/no/app-sec/spell_check)
+==24497== 
+==24497== LEAK SUMMARY:
+==24497==    definitely lost: 105,748 bytes in 1,908 blocks
+==24497==    indirectly lost: 6,789,776 bytes in 121,246 blocks
+==24497==      possibly lost: 0 bytes in 0 blocks
+==24497==    still reachable: 552 bytes in 1 blocks
+==24497==         suppressed: 0 bytes in 0 blocks
+==24497== Reachable blocks (those to which a pointer was found) are not shown.
+==24497== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==24497== 
+==24497== For counts of detected and suppressed errors, rerun with: -v
+==24497== ERROR SUMMARY: 169 errors from 7 contexts (suppressed: 0 from 0)
+no@no:~/app-sec$ 
