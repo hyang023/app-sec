@@ -94,7 +94,6 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[]) {
 
 //function check_words(file fp, hashmap hashtable[], string misspelled[])
 int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[]) {
-    printf("entering check_words function\n");
     //Set int num_misspelled to 0.
     int num_misspelled = 0;
 
@@ -110,14 +109,14 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[]) {
         exit(EXIT_FAILURE);
  
     while ((read = getline(&line, &len, fp)) != -1) {
-        printf("Retrieved line of length %lu :\n", read);
+        //printf("Retrieved line of length %lu :\n", read);
         //for(token = strtok_r(read, " ", &savePtr); token != NULL; strtok_r(NULL, " ", &savePtr))
         printf("check words line is: %s", line);
         //char* token; 
         char* rest = strdup(line); 
         //char *rest;
         //strtok(rest, " ");
-        while ((token = strtok_r(rest, " !,.?;-:\"\'", &rest)) != NULL){
+        while ((token = strtok_r(rest, " !,.?;-:\"\'", &rest))){
             printf("token is: %s\n", token);
             //remove punctuation from beginning and end of word
             //if not check_word(word):
