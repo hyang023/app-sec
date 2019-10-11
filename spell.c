@@ -14,27 +14,27 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
     for (int i=0; i<strlen(lower_word); i++){
       lower_word[i]=tolower(lower_word[i]);
     }
-    printf("check_word word is: \"%s\";",lower_word);
+    //printf("check_word word is: \"%s\";",lower_word);
     //int hash_val = hash_function(lower_word) otherwise as:
     //Set int bucket to the output of hash_function(word).
     int hash_val = hash_function(lower_word);
-    printf("hash_val is %d;",hash_val);
+    //printf("hash_val is %d;",hash_val);
     //Set hashmap_t cursor equal to hashmap[bucket].
     hashmap_t cursor = hashtable[hash_val];
     //While cursor is not NULL:
     //char lower_word2[strlen(lower_word)];
     //strcpy(lower_word2, lower_word);
     while (cursor != NULL){
-        printf("cursor word is \"%s\" and lower_word2 is \"%s\"\n",cursor->word,lower_word);
+        //printf("cursor word is \"%s\" and lower_word2 is \"%s\"\n",cursor->word,lower_word);
         //If word equals cursor->word:
         if (strcmp(lower_word, cursor->word) == 0){
-            printf("returning 1\n");
+            //printf("returning 1\n");
             return 1;
         }
         //Set curosr to cursor->next.
         cursor = cursor->next;
     }
-    printf("returning 0\n");
+    //printf("returning 0\n");
     return 0;
 }
 
@@ -73,7 +73,7 @@ bool load_dictionary(const char* dictionary_file, hashmap_t hashtable[]) {
         line[strlen(line)-1] = '\0';
         //NEED TO MALLOC
         //printf("Retrieved line of length %u :\n", read);
-        printf("\"%s\"", line);
+        //printf("\"%s\"", line);
         //Set hashmap_t new_node to a new node.
         hashmap_t new_node = (struct node*) malloc(sizeof(struct node));;
         //Set new_node->next to NULL.
@@ -126,7 +126,7 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[]) {
         //char *rest;
         //strtok(rest, " ");
         while ((token = strtok_r(rest, " !,.?;-:\"\'\n", &rest))){
-            printf("token is: \"%s\";", token);
+            //printf("token is: \"%s\";", token);
             //remove punctuation from beginning and end of word
             //if not check_word(word):
             if (!(check_word(token,hashtable))) {
