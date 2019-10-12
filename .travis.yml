@@ -1,4 +1,5 @@
 install: make get-deps
+dist: bionic
 compiler:
   - clang
   - gcc
