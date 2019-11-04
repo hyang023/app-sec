@@ -21,5 +21,8 @@ int main(int argc, char *argv[]){
     	//fclose(fp);
 	int num_misspelled = check_words(fp, hashtable, misspelled);
 	printf("num misspelled is %d\n",num_misspelled);
+	for (int i=0; i<num_misspelled; i++){
+		printf("mispelled[i] is %s\n",misspelled[i]);
+	}
 	return 0;
 }

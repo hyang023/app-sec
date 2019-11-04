@@ -127,7 +127,7 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[]) {
         char* rest = strdup(line); 
         //char *rest;
         //strtok(rest, " ");
-        while ((token = strtok_r(rest, " !,.?;-:\"\'\n", &rest))){
+        while ((token = strtok_r(rest, " ", &rest))){
             //printf("token is: \"%s\";", token);
             //remove punctuation from beginning and end of word
             //if not check_word(word):
