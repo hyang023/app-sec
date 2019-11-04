@@ -5,6 +5,15 @@
 #include <ctype.h>
 #include "dictionary.h"
 
+//function to strip punctuation from tokenized word
+void remove_punctuation(char* word) {
+    if (ispunct(word[strlen(word)-1])){
+      word[strlen(word)-1]='\0';
+    }
+    //insert loop to remove punctuation at word[0]
+    return;
+}
+
 //function check_word(string word, hashmap hashtable[])
 bool check_word(const char* word, hashmap_t hashtable[]) {
     //string lower_word = to_lower(word)
@@ -14,6 +23,7 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
     for (int i=0; i<strlen(lower_word); i++){
       lower_word[i]=tolower(lower_word[i]);
     }
+    remove_punctuation(lower_word);
     //printf("check_word word is: \"%s\";",lower_word);
     //int hash_val = hash_function(lower_word) otherwise as:
     //Set int bucket to the output of hash_function(word).
