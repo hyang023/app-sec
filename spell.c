@@ -6,12 +6,15 @@
 #include "dictionary.h"
 
 //function to strip punctuation from tokenized word
-void remove_punctuation(char* word) {
+char* remove_punctuation(char* word) {
+    if (word[strlen(word)-1]=='\n'){
+      word[strlen(word)-1]='\0';
+    }
     if (ispunct(word[strlen(word)-1])){
       word[strlen(word)-1]='\0';
     }
     //insert loop to remove punctuation at word[0]
-    return;
+    return word;
 }
 
 //function check_word(string word, hashmap hashtable[])
@@ -23,7 +26,6 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
     for (int i=0; i<strlen(lower_word); i++){
       lower_word[i]=tolower(lower_word[i]);
     }
-    remove_punctuation(lower_word);
     //printf("check_word word is: \"%s\";",lower_word);
     //int hash_val = hash_function(lower_word) otherwise as:
     //Set int bucket to the output of hash_function(word).
@@ -140,6 +142,7 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[]) {
         while ((token = strtok_r(rest, " ", &rest))){
             //printf("token is: \"%s\";", token);
             //remove punctuation from beginning and end of word
+	    token = remove_punctuation(token);
             //if not check_word(word):
             if (!(check_word(token,hashtable))) {
                 //append word to misspelled
