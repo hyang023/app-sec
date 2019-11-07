@@ -10,10 +10,15 @@ char* remove_punctuation(char* word) {
     if (word[strlen(word)-1]=='\n'){
       word[strlen(word)-1]='\0';
     }
-    if (ispunct(word[strlen(word)-1])){
+    while (ispunct(word[strlen(word)-1])){
       word[strlen(word)-1]='\0';
     }
     //insert loop to remove punctuation at word[0]
+    while (ispunt(word[0])){
+      for (i=1; i<strlen(word); i++){
+	 word [i-1]=word[i];
+      }
+      word[strlen(word)-1]='/0';
     return word;
 }
 
