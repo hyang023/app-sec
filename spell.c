@@ -18,7 +18,7 @@ char* remove_punctuation(char* word) {
       for (int i=1; i<strlen(word); i++){
 	 word [i-1]=word[i];
       }
-      word[strlen(word)-1]='/0';
+      word[strlen(word)-1]='\0';
     }
     return word;
 }
