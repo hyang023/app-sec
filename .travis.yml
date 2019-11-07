@@ -3,3 +3,6 @@ dist: bionic
 compiler:
   - clang
   - gcc
+script:
+  - echo "running tests"
+  - make
