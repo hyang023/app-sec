@@ -2,8 +2,11 @@ dist: bionic
 
 branchs:
 only:
-    - master
-    
+  - master
+   
+before_install:
+  - sudo apt install check
+   
 compiler:
   - clang
   - gcc
@@ -11,3 +14,4 @@ compiler:
 script:
   - echo "running tests"
   - make
+  - make test
