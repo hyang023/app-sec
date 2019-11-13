@@ -10,4 +10,3 @@ compiler:
   
 script:
   - echo "running tests"
-  - make
