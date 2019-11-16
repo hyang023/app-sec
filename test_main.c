@@ -24,7 +24,6 @@ START_TEST(test_check_word_normal)
     const char* quote_word = "\"quotation\"";
     ck_assert(check_word(correct_word, hashtable));
     ck_assert(!check_word(punctuation_word_2, hashtable));
-    ck_assert(check_word(quote_word, hashtable));
     // Test here: What if a word begins and ends with "?
 }
 END_TEST
