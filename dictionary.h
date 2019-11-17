@@ -29,6 +29,8 @@ node;
 
 typedef node* hashmap_t;
 
+char* remove_punctuation(char* word);
+
 /**
  * Array misspelled is populated with words that are misspelled. Returns the length of misspelled.
  */
