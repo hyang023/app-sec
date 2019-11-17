@@ -31,7 +31,7 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
     }
     //string lower_word = to_lower(word)
     int a = strlen(word);
-    char* lower_word = malloc(a);
+    char* lower_word = malloc(a+1);
     strcpy(lower_word, word);
     for (int i=0; i<strlen(lower_word); i++){
       lower_word[i]=tolower(lower_word[i]);
