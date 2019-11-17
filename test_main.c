@@ -29,7 +29,7 @@ START_TEST(test_check_word_normal)
     load_dictionary(DICTIONARY, hashtable);
     const char* correct_word = "Justice";
     const char* punctuation_word_2 = "pl.ace";
-    const char* number_word = "1234567"
+    const char* number_word = "1234567";
     ck_assert(check_word(correct_word, hashtable));
     ck_assert(!check_word(punctuation_word_2, hashtable));
     // Test here: What if a word is a number?
@@ -66,6 +66,7 @@ check_word_suite(void)
     TCase * check_word_case;
     suite = suite_create("check_word");
     check_word_case = tcase_create("Core");
+    tcase_add_test(check_word_case, test_remove_punctuation_normal);
     tcase_add_test(check_word_case, test_check_word_normal);
     tcase_add_test(check_word_case, test_check_words_normal);
     suite_add_tcase(suite, check_word_case);
