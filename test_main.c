@@ -15,18 +15,23 @@ START_TEST(test_dictionary_normal)
 }
 END_TEST
 
+START_TEST(test_remove_punctuation_normal)
+{
+    const char* question_word = "quotation?";
+    // Test here: What if a word begins with punctuation
+    ck_assert(strcmp(remove_punctuation(question_word), "quotation") == 0);
+}
+END_TEST
+
 START_TEST(test_check_word_normal)
 {
     hashmap_t hashtable[HASH_SIZE];
     load_dictionary(DICTIONARY, hashtable);
     const char* correct_word = "Justice";
     const char* punctuation_word_2 = "pl.ace";
-    //const char* question_word = "quotation?";
     const char* number_word = "1234567"
     ck_assert(check_word(correct_word, hashtable));
     ck_assert(!check_word(punctuation_word_2, hashtable));
-    // Test here: What if a word begins and ends with "?
-    //ck_assert(check_word(question_word, hashtable));
     // Test here: What if a word is a number?
     ck_assert(check_word(number_word);
 }
