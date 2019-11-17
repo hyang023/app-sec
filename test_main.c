@@ -21,7 +21,7 @@ START_TEST(test_check_word_normal)
     load_dictionary(DICTIONARY, hashtable);
     const char* correct_word = "Justice";
     const char* punctuation_word_2 = "pl.ace";
-    const char* question_word = "quotation?";
+    const char* question_word = "?quotation?";
     ck_assert(check_word(correct_word, hashtable));
     ck_assert(!check_word(punctuation_word_2, hashtable));
     ck_assert(check_word(correct_word, hashtable));
