@@ -28,7 +28,7 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
     //check if string is number
     int isnum = 1;
     for (int i=0; i<strlen(word); i++){
-      if (isdigit(word[i])) isnum=0;
+      if (!(isdigit(word[i]))) isnum=0;
     }
     if (isnum ==1) return 1;
     //string lower_word = to_lower(word)
