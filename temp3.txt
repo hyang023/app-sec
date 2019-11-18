@@ -1,0 +1,37 @@
+$ valgrind --leak-check=yes ./spell_check test1.txt wordlist.txt
+==3608== Memcheck, a memory error detector
+==3608== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3608== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==3608== Command: ./spell_check test1.txt wordlist.txt
+==3608== 
+num misspelled is 3
+mispelled[i] is sogn
+mispelled[i] is skyn
+mispelled[i] is betta
+==3608== 
+==3608== HEAP SUMMARY:
+==3608==     in use at exit: 6,895,995 bytes in 123,133 blocks
+==3608==   total heap usage: 123,161 allocs, 28 frees, 6,906,106 bytes allocated
+==3608== 
+==3608== 107 bytes in 1 blocks are definitely lost in loss record 1 of 4
+==3608==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3608==    by 0x4ED99B9: strdup (strdup.c:42)
+==3608==    by 0x108FA7: check_words (in /home/no/app-sec-assignment1/spell_check)
+==3608==    by 0x1090FA: main (in /home/no/app-sec-assignment1/spell_check)
+==3608== 
+==3608== 6,895,336 (105,560 direct, 6,789,776 indirect) bytes in 1,885 blocks are definitely lost in loss record 4 of 4
+==3608==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3608==    by 0x108E3C: load_dictionary (in /home/no/app-sec-assignment1/spell_check)
+==3608==    by 0x1090B6: main (in /home/no/app-sec-assignment1/spell_check)
+==3608== 
+==3608== LEAK SUMMARY:
+==3608==    definitely lost: 105,667 bytes in 1,886 blocks
+==3608==    indirectly lost: 6,789,776 bytes in 121,246 blocks
+==3608==      possibly lost: 0 bytes in 0 blocks
+==3608==    still reachable: 552 bytes in 1 blocks
+==3608==         suppressed: 0 bytes in 0 blocks
+==3608== Reachable blocks (those to which a pointer was found) are not shown.
+==3608== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==3608== 
+==3608== For counts of detected and suppressed errors, rerun with: -v
+==3608== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
