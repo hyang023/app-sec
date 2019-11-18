@@ -26,7 +26,7 @@ char* remove_punctuation(char* word) {
 //function check_word(string word, hashmap hashtable[])
 bool check_word(const char* word, hashmap_t hashtable[]) {
     //check if string is number
-    if (isdigit(word)){
+    if (isnumber(word)){
       return 1;
     }
     //string lower_word = to_lower(word)
