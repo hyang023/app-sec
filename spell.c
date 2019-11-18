@@ -162,7 +162,7 @@ int check_words(FILE* fp, hashmap_t hashtable[], char * misspelled[]) {
                 //NEED TO MALLOC
                 //For a variable-length string, do:
                 //char *string = malloc(length + 1);
-		misspelled[num_misspelled] = malloc(strlen(token)+1)
+		misspelled[num_misspelled] = malloc(strlen(token)+1);
                 misspelled[num_misspelled]=token;
                 //increment num_misspelled 
                 num_misspelled++;
