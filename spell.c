@@ -31,7 +31,7 @@ bool check_word(const char* word, hashmap_t hashtable[]) {
       if (!(isdigit(word[i]))) isnum=0;
     }
     if (isnum ==1) return 1;
-    string lower_word = to_lower(word)
+    //string lower_word = to_lower(word)
     int a = strlen(word);
     char* lower_word = malloc(a+1);
     strcpy(lower_word, word);
