@@ -45,7 +45,7 @@ START_TEST(test_check_word_normal)
     const char* number_word = "12345";
     ck_assert(check_word(correct_word, hashtable));
     ck_assert(!check_word(punctuation_word_2, hashtable));
-    ck_assert(check_word(number_word, hashtable));
+    ck_assert(!check_word(number_word, hashtable));
 }
 END_TEST
 
