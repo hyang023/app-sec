@@ -9,9 +9,26 @@ START_TEST(test_dictionary_normal)
 {
     hashmap_t hashtable[HASH_SIZE];
     ck_assert(load_dictionary(TESTDICT, hashtable));
+    char* hash_word1 = "first";
+    int hash_val1 = hash_function(hash_word1);
+    char* hash_word2 = "second";
+    int hash_val2 = hash_function(hash_word2);
+    char* hash_word3 = "third";
+    int hash_val3 = hash_function(hash_word3);
+    char* hash_word4 = "test";
+    int hash_val4 = hash_function(hash_word4);
     // Here we can test if certain words ended up in certain buckets
     // to ensure that our load_dictionary works as intended. I leave
     // this as an exercise.
+    int words_in_correct_bucket = 0;
+    hashmap_t cursor = hashtable[hash_val1];
+    while (cursor != NULL){
+        if (strcmp(hash_word1, cursor->word) == 0){
+            word_in_bucket += 1;
+        }
+        cursor = cursor->next;
+    }
+    ck_assert(words_in_currect_bucket == 1);
 }
 END_TEST
 
