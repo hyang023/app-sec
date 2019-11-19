@@ -28,21 +28,21 @@ START_TEST(test_dictionary_normal)
         }
         cursor = cursor->next;
     }
-    hashmap_t cursor = hashtable[hash_val2];
+    cursor = hashtable[hash_val2];
     while (cursor != NULL){
         if (strcmp(hash_word2, cursor->word) == 0){
             words_in_correct_bucket += 1;
         }
         cursor = cursor->next;
     }
-    hashmap_t cursor = hashtable[hash_val3];
+    cursor = hashtable[hash_val3];
     while (cursor != NULL){
         if (strcmp(hash_word3, cursor->word) == 0){
             words_in_correct_bucket += 1;
         }
         cursor = cursor->next;
     }
-    hashmap_t cursor = hashtable[hash_val4];
+    cursor = hashtable[hash_val4];
     while (cursor != NULL){
         if (strcmp(hash_word4, cursor->word) == 0){
             words_in_correct_bucket += 1;
