@@ -58,6 +58,12 @@ START_TEST(test_check_words_normal)
     ck_assert_msg(strcmp(misspelled[0], expected[0]) == 0);
     ck_assert_msg(strcmp(misspelled[1], expected[1]) == 0);
     ck_assert_msg(strcmp(misspelled[2], expected[2]) == 0);
+    
+    char* test_word1 = "quotation?";
+    test_word1 = remove_punctuation(test_word1);
+    const char* compare_word1 = "quotation";
+    // Test here: What if a word begins with punctuation
+    ck_assert(strcmp(test_word1, compare_word1) == 0);
 }
 END_TEST
 
@@ -68,7 +74,7 @@ check_word_suite(void)
     TCase * check_word_case;
     suite = suite_create("check_word");
     check_word_case = tcase_create("Core");
-    tcase_add_test(check_word_case, test_remove_punctuation_normal);
+    //tcase_add_test(check_word_case, test_remove_punctuation_normal);
     tcase_add_test(check_word_case, test_check_word_normal);
     tcase_add_test(check_word_case, test_check_words_normal);
     suite_add_tcase(suite, check_word_case);
