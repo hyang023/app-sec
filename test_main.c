@@ -41,9 +41,11 @@ START_TEST(test_check_word_normal)
     hashmap_t hashtable[HASH_SIZE];
     load_dictionary(DICTIONARY, hashtable);
     const char* correct_word = "Justice";
+    const char* correct_word = "JUSTICE";
     const char* punctuation_word_2 = "pl.ace";
     const char* number_word = "12345";
     ck_assert(check_word(correct_word, hashtable));
+    ck_assert(check_word(correct_word2, hashtable));
     ck_assert(!check_word(punctuation_word_2, hashtable));
     ck_assert(!check_word(number_word, hashtable));
 }
