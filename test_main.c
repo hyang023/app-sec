@@ -24,7 +24,7 @@ START_TEST(test_dictionary_normal)
     hashmap_t cursor = hashtable[hash_val1];
     while (cursor != NULL){
         if (strcmp(hash_word1, cursor->word) == 0){
-            word_in_correct_bucket += 1;
+            words_in_correct_bucket += 1;
         }
         cursor = cursor->next;
     }
