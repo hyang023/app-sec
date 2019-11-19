@@ -24,10 +24,13 @@ START_TEST(test_remove_punctuation_normal)
     test_word2 = remove_punctuation(test_word2);
     char* test_word3 = ".quotation.";
     test_word3 = remove_punctuation(test_word3);
+    char* test_word4 = "quotation!!!!!";
+    test_word4 = remove_punctuation(test_word4);
     // Test here: What if a word begins with punctuation
     ck_assert(strcmp(test_word1, compare_word1) == 0);
     ck_assert(strcmp(test_word2, compare_word1) == 0);
     ck_assert(strcmp(test_word3, compare_word1) == 0);
+    ck_assert(strcmp(test_word4, compare_word1) == 0);
 }
 END_TEST
 
