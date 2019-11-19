@@ -28,7 +28,7 @@ START_TEST(test_dictionary_normal)
         }
         cursor = cursor->next;
     }
-    ck_assert(words_in_currect_bucket == 1);
+    ck_assert(words_in_correct_bucket == 1);
 }
 END_TEST
 
