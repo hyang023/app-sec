@@ -17,11 +17,14 @@ END_TEST
 
 START_TEST(test_remove_punctuation_normal)
 {
+    const char* compare_word1 = "quotation";
     char* test_word1 = "quotation.";
     test_word1 = remove_punctuation(test_word1);
-    const char* compare_word1 = "quotation";
+    char* test_word2 = ".quotation";
+    test_word1 = remove_punctuation(test_word2);
     // Test here: What if a word begins with punctuation
     ck_assert(strcmp(test_word1, compare_word1) == 0);
+    ck_assert(strcmp(test_word2, compare_word1) == 0);
 }
 END_TEST
 
